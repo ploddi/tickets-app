@@ -22,7 +22,7 @@ class InMemoryInventory(state: Ref[State]) extends Inventory {
   override def createOrder(performanceDate: LocalDate, title: String, tickets: Int): ZIO[Any, InventoryError, Performance] = {
     state.modify { currentState =>
       (for {
-        updatedState <- currentState.makeOrder(performanceDate, title, tickets)
+        updatedState <- currentState.createOrder(performanceDate, title, tickets)
         performance <- updatedState.findPerformance(performanceDate, title).toRight("Performance not found")
       } yield (updatedState, performance)) match {
         case Left(error) => (Left(InventoryError(error)), currentState)

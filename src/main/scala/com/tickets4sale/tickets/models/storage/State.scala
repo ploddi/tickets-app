@@ -17,7 +17,7 @@ case class State(shows: Map[String, ShowState]) {
     shows.get(title).map(_.toPerformance(performanceDate))
   }
 
-  def makeOrder(performanceDate: LocalDate, title: String, tickets: Int): Either[String, State] = {
+  def createOrder(performanceDate: LocalDate, title: String, tickets: Int): Either[String, State] = {
     for {
       state <- shows.get(title).toRight("Show not found")
       updatedState <- state.makeOrder(performanceDate, tickets)
