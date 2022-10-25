@@ -10,17 +10,19 @@ case class ShowState(show: Show, ticketsByDate: Map[LocalDate, Int]) {
     Performance(
       show,
       performanceDate,
-      ticketsByDate.getOrElse(performanceDate, Performance.defaultTicketsPerPerformance))
+      ticketsAvailable(performanceDate))
 
   def makeOrder(performanceDate: LocalDate, tickets: Int): Either[String, ShowState] = {
-    val ticketsAvailable =
-      ticketsByDate.getOrElse(performanceDate, Performance.defaultTicketsPerPerformance)
+    val available = ticketsAvailable(performanceDate)
 
-    if (ticketsAvailable < tickets) {
+    if (available < tickets) {
       Left("Not enough tickets")
     } else {
-      Right(copy(ticketsByDate = ticketsByDate + (performanceDate -> (ticketsAvailable - tickets))))
+      Right(copy(ticketsByDate = ticketsByDate + (performanceDate -> (available - tickets))))
     }
   }
+
+  private def ticketsAvailable(performanceDate: LocalDate): Int =
+    ticketsByDate.getOrElse(performanceDate, Performance.defaultTicketsPerPerformance)
 
 }
