@@ -10,7 +10,7 @@ import zio.test.junit.JUnitRunnableSpec
 
 import java.time.LocalDate
 
-class InMemoryInventorySpec extends JUnitRunnableSpec {
+class TicketsAppSpec extends JUnitRunnableSpec {
 
   val stateFixture = State.fromShowsList(List(
     Show("Show 1", Genre.Drama, LocalDate.parse("2022-01-01"), LocalDate.parse("2022-01-01").plusDays(99)),
