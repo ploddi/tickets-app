@@ -15,7 +15,7 @@ serialization layer (can be found in `models.api` package). JSON was chosen as p
 so I decided to go with `zio-json` as JSON library of choice. `zio-json` supports auto decoder/encoder generation, 
 so it was easy and with minimal boilerplate.
 
-In order to provide MVP as-soon-as-possible I used im-memory storage instead of proper persistence.
+In order to provide MVP as-soon-as-possible I used in-memory storage instead of proper persistence.
 `services.Inventory` provides ZIO API to storage. Actual pure state management is implemented in
 `models.storage` package. In-memory state is protected from concurrent access by `ZIO.Ref`.
 Pretty much all business related constants are accumulated in `models.Performance` object,
