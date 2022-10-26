@@ -26,7 +26,7 @@ Initial state for MVP is loaded from CSV resource bundled with app. I decided to
 `services.InventoryLoader`.
 
 HTTP is handled by `endpoint.TicketsHttp`, which is responsible for req/res parsing and
-delegating method calls ot `services.Inventory` service.
+delegating method calls to `services.Inventory` service.
 
 Due to fact, that MVP uses in-memory storage, which probably will be swapped with actual
 persistent storage layer, I decided not to cover `services.InMemoryInventory` with unit tests,
