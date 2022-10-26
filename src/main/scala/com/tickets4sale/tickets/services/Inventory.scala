@@ -42,4 +42,9 @@ object Inventory {
       ref <- Ref.make(State.fromShowsList(shows))
     } yield new InMemoryInventory(ref)
   }
+
+  def test(state: State): ZLayer[Any, Nothing, InMemoryInventory] = ZLayer {
+    Ref.make(state).map(new InMemoryInventory(_))
+  }
+
 }

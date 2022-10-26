@@ -26,9 +26,9 @@ object Performance {
   val defaultTicketsPerPerformance = 100
 
   def defaultPriceForGenre(genre: Genre): BigDecimal = genre match {
-    case Genre.Musicals => BigDecimal.decimal(70)
-    case Genre.Comedy => BigDecimal.decimal(50)
-    case Genre.Drama => BigDecimal.decimal(40)
+    case Genre.Musicals => BigDecimal.decimal(70.0)
+    case Genre.Comedy => BigDecimal.decimal(50.0)
+    case Genre.Drama => BigDecimal.decimal(40.0)
   }
 
 

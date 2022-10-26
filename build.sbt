@@ -17,5 +17,5 @@ lazy val root = (project in file("."))
       zioJson,
       zioHttp,
       kantanCsv,
-      scalaTest % Test)
+      zioTestJUnit % Test)
   )
