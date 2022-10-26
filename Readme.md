@@ -25,7 +25,7 @@ Initial state for MVP is loaded from CSV resource bundled with app. I decided to
 `kantan.csv` library for CSV parsing and loading. CSV loading code can be found in 
 `services.InventoryLoader`.
 
-HTTP is handled by `endpoint.TicketsHttp`, which is responsible for req/res parsing and
+HTTP is handled by `endpoint.TicketsHttp`, which is responsible for routing and req/res parsing and
 delegating method calls to `services.Inventory` service.
 
 Due to fact, that MVP uses in-memory storage, which probably will be swapped with actual
