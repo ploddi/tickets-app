@@ -31,7 +31,7 @@ delegating method calls to `services.Inventory` service.
 Due to fact, that MVP uses in-memory storage, which probably will be swapped with actual
 persistent storage layer, I decided not to cover `services.InMemoryInventory` with unit tests,
 but rather cover the whole app with suite of integration tests (which can be used as reference
-for future persistence layer).
+for testing with future persistence layer).
 
 App can be executed via `sbt run` command (but you should prepare local `zio-http` snapshots first!)
 or via Docker.
