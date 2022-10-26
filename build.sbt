@@ -8,7 +8,12 @@ ThisBuild / organization     := "com.tickets4sale"
 ThisBuild / organizationName := "Tickets4Sale"
 
 
+Docker / dockerUsername := Some("ploddi")
+Docker / dockerExposedUdpPorts := Seq(8080)
+
+
 lazy val root = (project in file("."))
+  .enablePlugins(JavaAppPackaging, DockerPlugin)
   .settings(
     name := "tickets4sale",
     libraryDependencies ++= Seq(

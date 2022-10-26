@@ -7,7 +7,7 @@ import zio.http.ServerConfig.LeakDetectionLevel
 import zio.http._
 
 object TicketsApp extends ZIOAppDefault {
-  val PORT = 9000
+  val PORT = 8080
 
   val config: ServerConfig = ServerConfig.default
     .port(PORT)
