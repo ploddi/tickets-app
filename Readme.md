@@ -34,4 +34,4 @@ but rather cover the whole app with suite of integration tests (which can be use
 for testing with future persistence layer).
 
 App can be executed via `sbt run` command (but you should prepare local `zio-http` snapshots first!)
-or via Docker.
+or via Docker command `docker run -p 8080:8080 ploddi/tickets4sale:latest`
