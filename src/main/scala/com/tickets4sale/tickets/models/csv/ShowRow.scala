@@ -12,7 +12,7 @@ object ShowRow {
 
   implicit val dateDecode: CellDecoder[LocalDate] =
     CellDecoder
-      .dateDecoder(new SimpleDateFormat("YYYY-MM-DD"))
+      .dateDecoder(new SimpleDateFormat("yyyy-MM-ddg"))
       .map(d => LocalDate.ofInstant(d.toInstant, ZoneId.systemDefault()))
 
   implicit val rowDecoder: RowDecoder[ShowRow] = RowDecoder.ordered(ShowRow.apply _)
